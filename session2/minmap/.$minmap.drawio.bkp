@@ -1,0 +1,76 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="W63yFrphL2OJgKDyZdR6">
+    <mxGraphModel dx="1045" dy="815" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="K6nMQTUoByN3YlCazwTO-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 02:&lt;br&gt;&lt;b&gt;FASTAPI CƠ BẢN&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="980" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: Tổng quan kiến trúc web và FastAPI&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Kiến trúc Web (Client - Server):&lt;/b&gt; Client gửi request (HTTP), Server xử lý và trả về response (JSON/HTML).&lt;br&gt;• &lt;b&gt;FastAPI là gì?:&lt;/b&gt; Một Python Web Framework hiện đại, hiệu năng cực cao (nhờ Starlette và Pydantic).&lt;br&gt;• &lt;b&gt;Ưu điểm cốt lõi:&lt;/b&gt;&lt;br&gt;  - &lt;i&gt;Tốc độ vượt trội:&lt;/i&gt; Ngang ngửa NodeJS và Go nhờ hỗ trợ lập trình bất đồng bộ (Async/Await).&lt;br&gt;  - &lt;i&gt;Tự động hóa:&lt;/i&gt; Tự sinh tài liệu API (Docs), tự động kiểm tra kiểu dữ liệu (Data validation)." vertex="1">
+          <mxGeometry height="150" width="450" x="380" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-3" edge="1" parent="1" source="K6nMQTUoByN3YlCazwTO-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="K6nMQTUoByN3YlCazwTO-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="620" />
+              <mxPoint x="605" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: Thiết lập môi trường &amp;amp; Virtual Environment&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Virtual Environment (Môi trường ảo):&lt;/b&gt;&lt;br&gt;  - Giúp cô lập các thư viện của từng dự án Python riêng biệt, tránh xung đột phiên bản hệ thống.&lt;br&gt;• &lt;b&gt;Các bước thiết lập qua Terminal:&lt;/b&gt;&lt;br&gt;  - Tạo môi trường ảo venv: &lt;i&gt;python -m venv venv&lt;/i&gt;&lt;br&gt;  - Kích hoạt trên Windows: &lt;i&gt;.\venv\Scripts\activate&lt;/i&gt;&lt;br&gt;  - Kích hoạt trên macOS/Linux: &lt;i&gt;source venv/bin/activate&lt;/i&gt;&lt;br&gt;• &lt;b&gt;Cài đặt bộ thư viện chính:&lt;/b&gt; &lt;i&gt;pip install fastapi uvicorn&lt;/i&gt;" vertex="1">
+          <mxGeometry height="160" width="450" x="380" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-5" edge="1" parent="1" source="K6nMQTUoByN3YlCazwTO-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="K6nMQTUoByN3YlCazwTO-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: Khởi tạo ứng dụng FastAPI&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Các bước viết mã nguồn cơ bản (main.py):&lt;/b&gt;&lt;br&gt;  - Bước 1: Import thư viện: &lt;i&gt;from fastapi import FastAPI&lt;/i&gt;&lt;br&gt;  - Bước 2: Tạo instance: &lt;i&gt;app = FastAPI()&lt;/i&gt;&lt;br&gt;  - Bước 3: Định nghĩa hàm xử lý kèm Decorator.&lt;br&gt;• &lt;b&gt;Lệnh vận hành Server (Uvicorn ASGI):&lt;/b&gt;&lt;br&gt;  - Khởi chạy lệnh: &lt;i&gt;uvicorn main:app --reload&lt;/i&gt;&lt;br&gt;  - Tham số &lt;i&gt;--reload&lt;/i&gt; giúp tự động tải lại server khi phát hiện code thay đổi." vertex="1">
+          <mxGeometry height="150" width="440" x="1350" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-7" edge="1" parent="1" source="K6nMQTUoByN3YlCazwTO-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="K6nMQTUoByN3YlCazwTO-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="610" />
+              <mxPoint x="1570" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: API endpoint (routing)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Endpoint:&lt;/b&gt; Là đường dẫn URL kết hợp với các phương thức HTTP định nghĩa cách truy cập tài nguyên trên Web.&lt;br&gt;• &lt;b&gt;Các HTTP Methods cơ bản:&lt;/b&gt;&lt;br&gt;  - &lt;i&gt;@app.get():&lt;/i&gt; Lấy dữ liệu về.&lt;br&gt;  - &lt;i&gt;@app.post():&lt;/i&gt; Tạo mới dữ liệu.&lt;br&gt;  - &lt;i&gt;@app.put():&lt;/i&gt; Cập nhật toàn bộ dữ liệu.&lt;br&gt;  - &lt;i&gt;@app.delete():&lt;/i&gt; Xóa dữ liệu.&lt;br&gt;• &lt;b&gt;Xử lý dữ liệu trả về:&lt;/b&gt; FastAPI tự động chuyển đổi Dictionary/List trong Python sang chuỗi định dạng JSON chuẩn." vertex="1">
+          <mxGeometry height="160" width="440" x="1350" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-9" edge="1" parent="1" source="K6nMQTUoByN3YlCazwTO-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="K6nMQTUoByN3YlCazwTO-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 05: Swagger UI (Tài liệu API tự động)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; FastAPI tự động sinh tài liệu giao diện tương tác trực quan cho toàn bộ các endpoint đã tạo mà không cần viết thêm mã cấu hình.&lt;br&gt;• &lt;b&gt;Đường dẫn truy cập mặc định:&lt;/b&gt;&lt;br&gt;  - Swagger UI: &lt;i&gt;http://127.0.0.1:8000/docs&lt;/i&gt;&lt;br&gt;  - ReDoc (Giao diện thay thế): &lt;i&gt;http://127.0.0.1:8000/redoc&lt;/i&gt;&lt;br&gt;• &lt;b&gt;Chức năng tương tác:&lt;/b&gt; Cho phép dev kiểm tra trực tiếp (Try it out), điền tham số, gửi request và xem mã trạng thái (Status code 200, 404,...) ngay trên trình duyệt." vertex="1">
+          <mxGeometry height="160" width="440" x="1350" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-11" edge="1" parent="1" source="K6nMQTUoByN3YlCazwTO-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="K6nMQTUoByN3YlCazwTO-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1310" y="830" />
+              <mxPoint x="1570" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;💡 TỔNG KẾT LUỒNG VẬN HÀNH FASTAPI CƠ BẢN&lt;/b&gt;&lt;br&gt;1. Kích hoạt &lt;b&gt;Venv&lt;/b&gt; ➔ 2. Viết file &lt;b&gt;main.py&lt;/b&gt; (Khởi tạo app &amp;amp; Route) ➔ 3. Chạy lệnh &lt;b&gt;uvicorn&lt;/b&gt; để bật cổng Server.&lt;br&gt;4. Khách hàng truy cập Endpoint (Ví dụ: nhận dữ liệu qua hàm GET) ➔ 5. Kiểm tra kết quả trực quan nhanh tại đường dẫn &lt;b&gt;/docs&lt;/b&gt;." vertex="1">
+          <mxGeometry height="80" width="570" x="805" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="K6nMQTUoByN3YlCazwTO-13" edge="1" parent="1" source="K6nMQTUoByN3YlCazwTO-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="K6nMQTUoByN3YlCazwTO-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
