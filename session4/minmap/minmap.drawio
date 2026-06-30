@@ -1,0 +1,65 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="EX_gM7mAHWasew9BZlmN">
+    <mxGraphModel dx="752" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 04:&lt;br&gt;&lt;b&gt;PARAMETERS &amp;amp; VALIDATION&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="270" x="965" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: Path Parameters&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Tham số được đặt trực tiếp bên trong đường dẫn URL (Path), dùng để định danh một tài nguyên cụ thể.&lt;br&gt;• &lt;b&gt;Cú pháp khai báo:&lt;/b&gt; Định nghĩa tham số trong ngoặc nhọn ở decorator, ví dụ: &lt;i&gt;@app.get(&quot;/items/{item_id}&quot;)&lt;/i&gt;.&lt;br&gt;• &lt;b&gt;Ép kiểu dữ liệu:&lt;/b&gt; Khai báo kiểu dữ liệu trực tiếp trong hàm xử lý, ví dụ: &lt;i&gt;def read_item(item_id: int)&lt;/i&gt; để FastAPI tự động chuyển đổi từ chuỗi sang số nguyên." vertex="1">
+          <mxGeometry height="140" width="450" x="390" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-3" edge="1" parent="1" source="C4_ptCqC3VqNMDMKkEJP-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="C4_ptCqC3VqNMDMKkEJP-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="470" />
+              <mxPoint x="615" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: Query Parameters&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Tham số không nằm trong path của URL, xuất hiện sau dấu chấm hỏi &lt;b&gt;?&lt;/b&gt; và phân tách nhau bởi dấu &lt;b&gt;&amp;amp;&lt;/b&gt;. Thường dùng cho bộ lọc, tìm kiếm, phân trang.&lt;br&gt;• &lt;b&gt;Cơ chế hoạt động:&lt;/b&gt; Khi khai báo các tham số trong hàm xử lý mà các tham số này không nằm trong đường dẫn path, FastAPI sẽ tự động hiểu đó là Query Parameters.&lt;br&gt;• &lt;b&gt;Tham số tùy chọn:&lt;/b&gt; Sử dụng gán giá trị mặc định (ví dụ: &lt;i&gt;limit: int = 10&lt;/i&gt;) hoặc dùng &lt;i&gt;None&lt;/i&gt; để biến tham số đó thành không bắt buộc." vertex="1">
+          <mxGeometry height="150" width="450" x="390" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-5" edge="1" parent="1" source="C4_ptCqC3VqNMDMKkEJP-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="C4_ptCqC3VqNMDMKkEJP-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: Request Body với Pydantic&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Dùng để gửi dữ liệu phức tạp từ Client lên Server dưới dạng phần thân yêu cầu (Request Body), cực kỳ phổ biến trong các phương thức POST, PUT.&lt;br&gt;• &lt;b&gt;Tích hợp Pydantic:&lt;/b&gt; Tạo một Class kế thừa từ &lt;i&gt;pydantic.BaseModel&lt;/i&gt; để định nghĩa cấu trúc dữ liệu mong muốn nhận về.&lt;br&gt;• &lt;b&gt;Data Validation:&lt;/b&gt; FastAPI tự động kiểm tra xem dữ liệu Client gửi lên có khớp với cấu trúc Model không. Nếu sai kiểu, hệ thống tự động trả về lỗi 422 Unprocessable Entity kèm mô tả chi tiết." vertex="1">
+          <mxGeometry height="150" width="450" x="1360" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-7" edge="1" parent="1" source="C4_ptCqC3VqNMDMKkEJP-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="C4_ptCqC3VqNMDMKkEJP-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="470" />
+              <mxPoint x="1585" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: Type Hints trong FastAPI&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Tính năng gợi ý kiểu dữ liệu chuẩn của Python (&lt;i&gt;str, int, float, bool&lt;/i&gt; hoặc từ module &lt;i&gt;typing&lt;/i&gt;).&lt;br&gt;• &lt;b&gt;Vai trò trong FastAPI:&lt;/b&gt; Là nền tảng cốt lõi giúp FastAPI thực hiện đồng thời 3 tác vụ tự động:&lt;br&gt;  - &lt;i&gt;Gợi ý code (Auto-complete):&lt;/i&gt; Hỗ trợ IDE hiển thị các phương thức có sẵn của kiểu dữ liệu.&lt;br&gt;  - &lt;i&gt;Kiểm tra dữ liệu (Validation):&lt;/i&gt; Từ chối các request sai định dạng ngay tại cửa ngõ.&lt;br&gt;  - &lt;i&gt;Tài liệu hóa (Documentation):&lt;/i&gt; Tự động khai báo cấu trúc Schema lên giao diện Swagger UI (/docs)." vertex="1">
+          <mxGeometry height="150" width="450" x="1360" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-9" edge="1" parent="1" source="C4_ptCqC3VqNMDMKkEJP-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="C4_ptCqC3VqNMDMKkEJP-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1300" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;🚀 TỔNG KẾT TƯ DUY KHAI BÁO PARAMETERS TRONG FASTAPI&lt;/b&gt;&lt;br&gt;1. Định danh tài nguyên đơn lẻ ➔ Chọn &lt;b&gt;Path Parameter&lt;/b&gt;.&lt;br&gt;2. Lọc danh sách, phân trang, tìm kiếm nâng cao ➔ Chọn &lt;b&gt;Query Parameter&lt;/b&gt;.&lt;br&gt;3. Truyền tải dữ liệu phức tạp tạo mới, cập nhật ➔ Chọn &lt;b&gt;Request Body với Pydantic Model&lt;/b&gt;.&lt;br&gt;4. Luôn luôn tận dụng khai báo &lt;b&gt;Type Hints&lt;/b&gt; chính xác để hệ thống tự động hóa khâu xử lý và hiển thị tài liệu /docs." vertex="1">
+          <mxGeometry height="90" width="570" x="815" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="C4_ptCqC3VqNMDMKkEJP-11" edge="1" parent="1" source="C4_ptCqC3VqNMDMKkEJP-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="C4_ptCqC3VqNMDMKkEJP-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
