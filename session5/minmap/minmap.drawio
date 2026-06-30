@@ -1,0 +1,65 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="j6_thwFZqWyIiFp0TvF-">
+    <mxGraphModel dx="1249" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 05:&lt;br&gt;&lt;b&gt;REST API (GET/POST/PUT/DELETE)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="300" x="920" y="645" as="geometry" />
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: API đọc dữ liệu (Read)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;HTTP Method:&lt;/b&gt; Sử dụng phương thức &lt;b&gt;GET&lt;/b&gt; để truy xuất thông tin từ Server.&lt;br&gt;• &lt;b&gt;Đặc điểm:&lt;/b&gt; Là thao tác an toàn (Safe) và lũy đẳng (Idempotent), không làm thay đổi trạng thái hay cơ sở dữ liệu trên Server.&lt;br&gt;• &lt;b&gt;Truyền dữ liệu:&lt;/b&gt; Thường đi kèm với Path Parameters (lấy theo ID cụ thể) hoặc Query Parameters (lọc danh sách, phân trang, tìm kiếm)." vertex="1">
+          <mxGeometry height="130" width="450" x="360" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-3" edge="1" parent="1" source="Yeq3DcShzHUbb7yBrUMN-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="Yeq3DcShzHUbb7yBrUMN-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="560" />
+              <mxPoint x="585" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: API thêm mới dữ liệu (Create)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;HTTP Method:&lt;/b&gt; Sử dụng phương thức &lt;b&gt;POST&lt;/b&gt; để đẩy dữ liệu mới lên Server.&lt;br&gt;• &lt;b&gt;Đặc điểm:&lt;/b&gt; Thao tác này làm thay đổi trạng thái dữ liệu hệ thống (tạo bản ghi mới) và không có tính lũy đẳng (gửi cùng một request nhiều lần sẽ tạo ra nhiều bản ghi trùng lặp).&lt;br&gt;• &lt;b&gt;Truyền dữ liệu:&lt;/b&gt; Dữ liệu khai báo phức tạp được bao đóng và gửi an toàn trong phần thân của yêu cầu (&lt;b&gt;Request Body&lt;/b&gt;), kết hợp với Pydantic Model để kiểm tra tính hợp lệ." vertex="1">
+          <mxGeometry height="150" width="450" x="360" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-5" edge="1" parent="1" source="Yeq3DcShzHUbb7yBrUMN-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="Yeq3DcShzHUbb7yBrUMN-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: API cập nhật dữ liệu (Update)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;HTTP Method:&lt;/b&gt; Sử dụng &lt;b&gt;PUT&lt;/b&gt; hoặc &lt;b&gt;PATCH&lt;/b&gt; để thay đổi thông tin tài nguyên đã có.&lt;br&gt;• &lt;b&gt;PUT (Cập nhật toàn bộ):&lt;/b&gt; Yêu cầu gửi đầy đủ tất cả các trường dữ liệu lên Server để tiến hành thay thế hoặc ghi đè toàn bộ tài nguyên cũ.&lt;br&gt;• &lt;b&gt;PATCH (Cập nhật một phần):&lt;/b&gt; Chỉ cần truyền lên những trường dữ liệu cụ thể có sự thay đổi, giúp tối ưu băng thông và tránh làm ảnh hưởng đến các trường dữ liệu khác." vertex="1">
+          <mxGeometry height="140" width="450" x="1330" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-7" edge="1" parent="1" source="Yeq3DcShzHUbb7yBrUMN-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="Yeq3DcShzHUbb7yBrUMN-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="560" />
+              <mxPoint x="1555" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: API xóa dữ liệu (Delete)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;HTTP Method:&lt;/b&gt; Sử dụng phương thức &lt;b&gt;DELETE&lt;/b&gt; để loại bỏ vĩnh viễn tài nguyên khỏi hệ thống.&lt;br&gt;• &lt;b&gt;Đặc điểm:&lt;/b&gt; Làm thay đổi trạng thái của cơ sở dữ liệu trên Server nhưng mang tính chất lũy đẳng (gọi lệnh xóa một ID nhiều lần thì kết quả sau cùng tài nguyên đó vẫn biến mất).&lt;br&gt;• &lt;b&gt;Cơ chế thực hiện:&lt;/b&gt; Thường bắt buộc truyền ID của đối tượng cần xóa lên Path Parameter (ví dụ: &lt;i&gt;/items/{item_id}&lt;/i&gt;) nhằm đảm bảo xóa chính xác tài nguyên cần chỉ định." vertex="1">
+          <mxGeometry height="140" width="450" x="1330" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-9" edge="1" parent="1" source="Yeq3DcShzHUbb7yBrUMN-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="Yeq3DcShzHUbb7yBrUMN-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;💡 QUY TẮC THIẾT KẾ REST API CHUẨN (CRUD MAPPING)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;CREATE (Thêm mới)&lt;/b&gt; ➔ Dùng phương thức &lt;b&gt;POST&lt;/b&gt; + Nhận dữ liệu thông qua &lt;b&gt;Request Body&lt;/b&gt;.&lt;br&gt;• &lt;b&gt;READ (Đọc/Lấy dữ liệu)&lt;/b&gt; ➔ Dùng phương thức &lt;b&gt;GET&lt;/b&gt; + Kết hợp lọc nâng cao qua &lt;b&gt;Query Parameter&lt;/b&gt;.&lt;br&gt;• &lt;b&gt;UPDATE (Sửa đổi)&lt;/b&gt; ➔ Dùng phương thức &lt;b&gt;PUT&lt;/b&gt; (ghi đè hết) hoặc &lt;b&gt;PATCH&lt;/b&gt; (chỉ sửa các trường cần thiết).&lt;br&gt;• &lt;b&gt;DELETE (Xóa bỏ)&lt;/b&gt; ➔ Dùng phương thức &lt;b&gt;DELETE&lt;/b&gt; + Xác định đích danh qua &lt;b&gt;Path Parameter&lt;/b&gt;." vertex="1">
+          <mxGeometry height="100" width="520" x="810" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="Yeq3DcShzHUbb7yBrUMN-11" edge="1" parent="1" source="Yeq3DcShzHUbb7yBrUMN-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="Yeq3DcShzHUbb7yBrUMN-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
