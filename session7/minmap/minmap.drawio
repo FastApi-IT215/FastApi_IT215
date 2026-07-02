@@ -1,0 +1,65 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="gwxw3JfZxPoUijRtxzhZ">
+    <mxGraphModel dx="792" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="l6FEBmX-XRh63TkRM88P-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 07:&lt;br&gt;&lt;b&gt;API RESPONSE &amp;amp; HANDLING ERRORS&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="330" x="945" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: Response Model&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Là cách định nghĩa cấu trúc dữ liệu đầu ra (Output) mà API sẽ trả về cho Client bằng Pydantic Model.&lt;br&gt;• &lt;b&gt;Cú pháp:&lt;/b&gt; Khai báo tham số &lt;i&gt;response_model&lt;/i&gt; ngay trong decorator (ví dụ: &lt;i&gt;@app.get(&quot;/&quot;, response_model=UserOut)&lt;/i&gt;).&lt;br&gt;• &lt;b&gt;Vai trò bảo mật:&lt;/b&gt; Tự động lọc bỏ các dữ liệu nhạy cảm không mong muốn trước khi gửi đi (như mật khẩu, mã hash), đồng thời tự động chuẩn hóa kiểu dữ liệu đầu ra chính xác." vertex="1">
+          <mxGeometry height="140" width="450" x="400" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-3" edge="1" parent="1" source="l6FEBmX-XRh63TkRM88P-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="l6FEBmX-XRh63TkRM88P-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="500" />
+              <mxPoint x="625" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: HTTP Status Codes&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Các mã trạng thái tiêu chuẩn được trả về kèm response nhằm thông báo nhanh kết quả của yêu cầu.&lt;br&gt;• &lt;b&gt;Các nhóm mã phổ biến:&lt;/b&gt;&lt;br&gt;  - &lt;i&gt;2xx (Thành công):&lt;/i&gt; 200 OK (Thành công chung), 201 Created (Tạo mới dữ liệu thành công).&lt;br&gt;  - &lt;i&gt;4xx (Lỗi từ phía Client):&lt;/i&gt; 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found.&lt;br&gt;  - &lt;i&gt;5xx (Lỗi từ phía Server):&lt;/i&gt; 500 Internal Server Error (Lỗi logic hệ thống).&lt;br&gt;• &lt;b&gt;Cấu hình trong FastAPI:&lt;/b&gt; Sử dụng thuộc tính &lt;i&gt;status_code&lt;/i&gt; ở decorator hoặc dùng module &lt;i&gt;status&lt;/i&gt; từ fastapi." vertex="1">
+          <mxGeometry height="160" width="450" x="400" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-5" edge="1" parent="1" source="l6FEBmX-XRh63TkRM88P-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="l6FEBmX-XRh63TkRM88P-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: Chuẩn hóa dữ liệu với API response&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Mục đích:&lt;/b&gt; Tạo ra một cấu trúc JSON đồng nhất cho tất cả các API trong hệ thống giúp Frontend dễ dàng xử lý (ví dụ: luôn có các trường &lt;i&gt;status, message, data&lt;/i&gt;).&lt;br&gt;• &lt;b&gt;Xây dựng Envelope Pattern:&lt;/b&gt; Bao bọc dữ liệu thô vào bên trong một cấu trúc chung định sẵn.&lt;br&gt;• &lt;b&gt;Ưu điểm:&lt;/b&gt; Đảm bảo dù API thành công hay thất bại, định dạng dữ liệu trả về luôn tuân theo một bộ khung quy ước cố định của dự án." vertex="1">
+          <mxGeometry height="140" width="450" x="1370" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-7" edge="1" parent="1" source="l6FEBmX-XRh63TkRM88P-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="l6FEBmX-XRh63TkRM88P-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1380" y="500" />
+              <mxPoint x="1595" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: Custom Exception Handlers&lt;/b&gt;&lt;br&gt;• &lt;b&gt;HTTPException:&lt;/b&gt; Công cụ có sẵn của FastAPI để ném ra lỗi khi xử lý (ví dụ: &lt;i&gt;raise HTTPException(status_code=404, detail=&quot;Item not found&quot;)&lt;/i&gt;).&lt;br&gt;• &lt;b&gt;Custom Exception:&lt;/b&gt; Tự định nghĩa các lớp ngoại lệ riêng để xử lý các lỗi logic đặc thù của doanh nghiệp.&lt;br&gt;• &lt;b&gt;Exception Handler:&lt;/b&gt; Viết hàm chặn bắt (&lt;i&gt;@app.exception_handler()&lt;/i&gt;) toàn cục để bắt các lỗi tùy biến này, xử lý tập trung và chuyển đổi chúng thành cấu trúc API Response chuẩn hóa trước khi gửi trả về cho Client." vertex="1">
+          <mxGeometry height="150" width="450" x="1370" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-9" edge="1" parent="1" source="l6FEBmX-XRh63TkRM88P-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="l6FEBmX-XRh63TkRM88P-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;💡 TƯ DUY THIẾT KẾ ĐẦU RA VÀ XỬ LÝ LỖI (API OUTPUT BEST PRACTICES)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Đầu ra (Response):&lt;/b&gt; Luôn sử dụng &lt;b&gt;Response Model&lt;/b&gt; để lọc thông tin nhạy cảm và định dạng cấu trúc JSON bao bọc chuẩn hóa.&lt;br&gt;• &lt;b&gt;Mã trạng thái:&lt;/b&gt; Sử dụng chính xác mã &lt;b&gt;HTTP Status Code&lt;/b&gt; tương ứng với ngữ cảnh (Thành công dùng 2xx, lỗi dùng 4xx/5xx).&lt;br&gt;• &lt;b&gt;Quản lý lỗi:&lt;/b&gt; Gom toàn bộ logic báo lỗi về một mối nhờ &lt;b&gt;Custom Exception Handlers&lt;/b&gt;, tránh để lộ lỗi thô (stack trace) của hệ thống." vertex="1">
+          <mxGeometry height="100" width="550" x="835" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="l6FEBmX-XRh63TkRM88P-11" edge="1" parent="1" source="l6FEBmX-XRh63TkRM88P-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="l6FEBmX-XRh63TkRM88P-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
