@@ -1,0 +1,77 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="t8GndVBzTJiOJiqvRx64">
+    <mxGraphModel dx="800" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 10:&lt;br&gt;&lt;b&gt;KẾT NỐI CSDL VỚI SQLALCHEMY ORM&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="330" x="965" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: Tổng quan ORM&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Object-Relational Mapping (ORM) là kỹ thuật cho phép ánh xạ các bảng trong cơ sở dữ liệu (CSDL) thành các lớp (Class) đối tượng trong mã nguồn lập trình.&lt;br&gt;• &lt;b&gt;Vai trò:&lt;/b&gt; Giúp lập trình viên tương tác, truy vấn và thao tác với CSDL hoàn toàn bằng ngôn ngữ Python thay vì phải viết các câu lệnh SQL thuần túy.&lt;br&gt;• &lt;b&gt;SQLAlchemy:&lt;/b&gt; Thư viện ORM mạnh mẽ, phổ biến và là tiêu chuẩn công nghiệp khi làm việc với các ứng dụng Python và FastAPI." vertex="1">
+          <mxGeometry height="140" width="450" x="420" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-3" edge="1" parent="1" source="BQpvb2wKtTsPxzelwN5O-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="BQpvb2wKtTsPxzelwN5O-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="530" />
+              <mxPoint x="645" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: Kết nối CSDL và Database Session&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Engine:&lt;/b&gt; Khởi tạo bộ điều khiển trung tâm bằng &lt;i&gt;create_engine()&lt;/i&gt;, chịu trách nhiệm quản lý kết nối vật lý và Connection Pool đến CSDL.&lt;br&gt;• &lt;b&gt;sessionmaker:&lt;/b&gt; Nhà máy tạo ra các phiên làm việc (Session) riêng biệt.&lt;br&gt;• &lt;b&gt;Database Session:&lt;/b&gt; Đóng vai trò như một không gian làm việc (giao dịch) tạm thời. Mọi thao tác thêm, sửa, xóa dữ liệu sẽ được gom cụm lại trong Session và chỉ chính thức thay đổi dưới CSDL khi gọi lệnh &lt;i&gt;session.commit()&lt;/i&gt;." vertex="1">
+          <mxGeometry height="150" width="450" x="420" y="645" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-5" edge="1" parent="1" source="BQpvb2wKtTsPxzelwN5O-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="BQpvb2wKtTsPxzelwN5O-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: SQLAlchemy Models&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Base Class:&lt;/b&gt; Sử dụng lớp nền tảng khai báo cấu trúc hệ thống (thường kế thừa từ &lt;i&gt;declarative_base()&lt;/i&gt; hoặc &lt;i&gt;DeclarativeBase&lt;/i&gt;).&lt;br&gt;• &lt;b&gt;Định nghĩa bảng:&lt;/b&gt; Tạo Class đại diện cho bảng, thiết lập tên bảng qua thuộc tính &lt;i&gt;__tablename__&lt;/i&gt;.&lt;br&gt;• &lt;b&gt;Khai báo thuộc tính:&lt;/b&gt; Định nghĩa các cột (Columns) kèm kiểu dữ liệu tương ứng (ví dụ: &lt;i&gt;Integer, String, Boolean&lt;/i&gt;), xác định khóa chính (&lt;i&gt;primary_key=True&lt;/i&gt;), ràng buộc &lt;i&gt;nullable&lt;/i&gt; hoặc giá trị mặc định &lt;i&gt;default&lt;/i&gt;." vertex="1">
+          <mxGeometry height="140" width="450" x="1390" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-7" edge="1" parent="1" source="BQpvb2wKtTsPxzelwN5O-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="BQpvb2wKtTsPxzelwN5O-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1400" y="530" />
+              <mxPoint x="1615" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: Hàm Service Insert&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Xây dựng hàm nghiệp vụ chuyên biệt phụ trách việc thêm mới một bản ghi dữ liệu vào bảng.&lt;br&gt;• &lt;b&gt;Quy trình thực hiện:&lt;/b&gt;&lt;br&gt;  - Khởi tạo một đối tượng (Instance) mới từ lớp Model đã định nghĩa.&lt;br&gt;  - Đưa đối tượng vào hàng đợi giám sát của phiên làm việc thông qua lệnh &lt;i&gt;db.add(new_object)&lt;/i&gt;.&lt;br&gt;  - Thực thi lưu trữ và đồng bộ vĩnh viễn dữ liệu xuống database bằng lệnh &lt;i&gt;db.commit()&lt;/i&gt;.&lt;br&gt;  - Làm mới đối tượng bằng lệnh &lt;i&gt;db.refresh(new_object)&lt;/i&gt; để lấy về các dữ liệu tự động sinh ra (như ID tăng tự động)." vertex="1">
+          <mxGeometry height="160" width="450" x="1390" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-9" edge="1" parent="1" source="BQpvb2wKtTsPxzelwN5O-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="BQpvb2wKtTsPxzelwN5O-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="650" />
+              <mxPoint x="1360" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 05: Hàm Service Select&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Xây dựng các hàm truy vấn nhằm tìm kiếm và lấy dữ liệu từ database lên ứng dụng.&lt;br&gt;• &lt;b&gt;Cú pháp truy vấn (SQLAlchemy v2):&lt;/b&gt; Sử dụng câu lệnh &lt;i&gt;select()&lt;/i&gt; kết hợp với hàm thực thi &lt;i&gt;db.execute()&lt;/i&gt;.&lt;br&gt;• &lt;b&gt;Các phương thức lấy kết quả phổ biến:&lt;/b&gt;&lt;br&gt;  - &lt;i&gt;.scalars().all():&lt;/i&gt; Trả về danh sách chứa toàn bộ các đối tượng thỏa mãn điều kiện.&lt;br&gt;  - &lt;i&gt;.scalars().first():&lt;/i&gt; Chỉ lấy ra một đối tượng đầu tiên tìm thấy hoặc trả về &lt;i&gt;None&lt;/i&gt; nếu không tìm thấy bản ghi nào.&lt;br&gt;• &lt;b&gt;Bộ lọc nâng cao:&lt;/b&gt; Sử dụng phương thức &lt;i&gt;.where()&lt;/i&gt; để thêm các điều kiện lọc dữ liệu chuẩn xác." vertex="1">
+          <mxGeometry height="160" width="450" x="1390" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-11" edge="1" parent="1" source="BQpvb2wKtTsPxzelwN5O-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="BQpvb2wKtTsPxzelwN5O-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="690" />
+              <mxPoint x="1360" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;💡 ĐẰNG SAU LUỒNG HOẠT ĐỘNG CỦA MỘT TÁC VỤ CSDL TRONG FASTAPI&lt;/b&gt;&lt;br&gt;1. Kiến trúc hệ thống map Class Python thành cấu trúc bảng SQL thông qua thư viện &lt;b&gt;SQLAlchemy Model&lt;/b&gt;.&lt;br&gt;2. Khi có Request, một &lt;b&gt;Database Session&lt;/b&gt; được cô lập và khởi tạo để theo dõi các thay đổi dữ liệu tạm thời.&lt;br&gt;3. Tách biệt logic xử lý CSDL ra các hàm &lt;b&gt;Service Insert/Select&lt;/b&gt; giúp mã nguồn luôn sạch sẽ, dễ bảo trì.&lt;br&gt;4. Kết thúc chu trình bằng &lt;b&gt;commit()&lt;/b&gt; để lưu dữ liệu xuống disk và tự động giải phóng Session giúp tối ưu tài nguyên hệ thống." vertex="1">
+          <mxGeometry height="110" width="570" x="845" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="BQpvb2wKtTsPxzelwN5O-13" edge="1" parent="1" source="BQpvb2wKtTsPxzelwN5O-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="BQpvb2wKtTsPxzelwN5O-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
