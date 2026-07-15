@@ -1,0 +1,65 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="bfwS1gPEwC8mqwtz2Srw">
+    <mxGraphModel dx="800" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="09jc84omWdQwEdoYqVYq-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 16:&lt;br&gt;&lt;b&gt;QUAN HỆ GIỮA CÁC BẢNG (RELATIONSHIPS)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="380" x="950" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: Quan hệ giữa các bảng&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Là cách kết nối các thực thể/bảng dữ liệu độc lập lại với nhau thông qua cơ chế Khóa ngoại (Foreign Key) nhằm phản ánh đúng logic thực tế của bài toán.&lt;br&gt;• &lt;b&gt;Mục đích:&lt;/b&gt; Đảm bảo tính toàn vẹn dữ liệu (Data Integrity), tránh trùng lặp thông tin vô lý và tối ưu hóa hiệu năng khi thực hiện truy vấn kết hợp các bảng (JOIN).&lt;br&gt;• &lt;b&gt;SQLAlchemy ORM:&lt;/b&gt; Sử dụng thuộc tính &lt;i&gt;relationship()&lt;/i&gt; để tạo liên kết ảo giữa các Model Python giúp dễ dàng truy cập dữ liệu liên quan mà không cần viết câu lệnh JOIN phức tạp." vertex="1">
+          <mxGeometry height="140" width="450" x="430" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-3" edge="1" parent="1" source="09jc84omWdQwEdoYqVYq-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="09jc84omWdQwEdoYqVYq-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="480" />
+              <mxPoint x="655" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: Thiết lập quan hệ 1 - 1&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Một bản ghi ở bảng A chỉ liên kết duy nhất với một bản ghi ở bảng B và ngược lại (Ví dụ: Người dùng ➔ Hồ sơ cá nhân, Số CMND).&lt;br&gt;• &lt;b&gt;Cơ chế vật lý:&lt;/b&gt; Đặt Khóa ngoại (Foreign Key) ở một trong hai bảng kèm theo thuộc tính &lt;b&gt;UNIQUE&lt;/b&gt; để ngăn chặn việc một bản ghi bị gán cho nhiều thực thể.&lt;br&gt;• &lt;b&gt;Cấu hình SQLAlchemy:&lt;/b&gt; Kết hợp &lt;i&gt;ForeignKey&lt;/i&gt; và dùng tham số &lt;i&gt;uselist=False&lt;/i&gt; trong hàm &lt;i&gt;relationship()&lt;/i&gt; ở phiên bản cũ hoặc cấu hình liên kết đối tác trực tiếp để chặn cấu trúc mảng dữ liệu (List)." vertex="1">
+          <mxGeometry height="150" width="450" x="430" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-5" edge="1" parent="1" source="09jc84omWdQwEdoYqVYq-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="09jc84omWdQwEdoYqVYq-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: Thiết lập quan hệ 1 - N&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Một bản ghi ở bảng A có thể liên kết với nhiều bản ghi ở bảng B, nhưng một bản ghi ở bảng B chỉ thuộc về duy nhất một bản ghi ở bảng A (Ví dụ: Một Lớp học ➔ Nhiều Học sinh, Một Danh mục ➔ Nhiều Sản phẩm).&lt;br&gt;• &lt;b&gt;Cơ chế vật lý:&lt;/b&gt; Khóa ngoại (Foreign Key) **luôn luôn** được đặt ở bảng phía nhiều (bảng N).&lt;br&gt;• &lt;b&gt;Cấu hình SQLAlchemy:&lt;/b&gt; Ở phía bảng 1 sử dụng &lt;i&gt;relationship()&lt;/i&gt; trả về một danh sách (List), ở phía bảng N cấu hình &lt;i&gt;relationship()&lt;/i&gt; trả về một đối tượng đơn lẻ." vertex="1">
+          <mxGeometry height="140" width="450" x="1400" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-7" edge="1" parent="1" source="09jc84omWdQwEdoYqVYq-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="09jc84omWdQwEdoYqVYq-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1410" y="480" />
+              <mxPoint x="1625" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: Thiết lập quan hệ N - N&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Khái niệm:&lt;/b&gt; Một bản ghi ở bảng A liên kết với nhiều bản ghi ở bảng B và ngược lại (Ví dụ: Một Học sinh ➔ Học nhiều Khóa học, Một Khóa học ➔ Có nhiều Học sinh đăng ký).&lt;br&gt;• &lt;b&gt;Cơ chế vật lý:&lt;/b&gt; Không thể đặt trực tiếp khóa ngoại giữa hai bảng. Bắt buộc phải tạo thêm một bảng trung gian (Association/Join Table) chứa tối thiểu hai cột khóa ngoại nối về hai bảng gốc.&lt;br&gt;• &lt;b&gt;Cấu hình SQLAlchemy:&lt;/b&gt; Định nghĩa bảng trung gian bằng đối tượng &lt;i&gt;Table&lt;/i&gt;, sau đó khai báo tham số &lt;i&gt;secondary=&quot;ten_bang_trung_gian&quot;&lt;/i&gt; bên trong hàm &lt;i&gt;relationship()&lt;/i&gt; của cả hai Model chính." vertex="1">
+          <mxGeometry height="150" width="450" x="1400" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-9" edge="1" parent="1" source="09jc84omWdQwEdoYqVYq-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="09jc84omWdQwEdoYqVYq-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;💡 TÓM TẮT TƯ DUY THIẾT KẾ MỐI QUAN HỆ (DATABASE RELATIONSHIP CHEAT SHEET)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Quan hệ 1 - 1:&lt;/b&gt; Khóa ngoại đặt ở đâu cũng được nhưng phải có ràng buộc &lt;b&gt;UNIQUE&lt;/b&gt;.&lt;br&gt;• &lt;b&gt;Quan hệ 1 - N:&lt;/b&gt; Khóa ngoại luôn nằm ở bảng bên phía &lt;b&gt;N (Nhiều)&lt;/b&gt;.&lt;br&gt;• &lt;b&gt;Quan hệ N - N:&lt;/b&gt; Bắt buộc phải đẻ ra &lt;b&gt;Bảng trung gian&lt;/b&gt; để lưu cặp khóa ngoại của hai bên.&lt;br&gt;• &lt;b&gt;Lưu ý ORM:&lt;/b&gt; Khóa ngoại (&lt;i&gt;ForeignKey&lt;/i&gt;) dùng để tạo liên kết cứng dưới CSDL vật lý, còn &lt;i&gt;relationship()&lt;/i&gt; là liên kết mềm ở tầng mã nguồn Python giúp thuận tiện truy xuất dữ liệu một cách tự động." vertex="1">
+          <mxGeometry height="110" width="570" x="855" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="09jc84omWdQwEdoYqVYq-11" edge="1" parent="1" source="09jc84omWdQwEdoYqVYq-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="09jc84omWdQwEdoYqVYq-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
