@@ -1,0 +1,65 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="AJ3BpdL7HHzCuXaOVizA">
+    <mxGraphModel dx="1343" dy="1018" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fontStyle=1" value="SESSION 18:&lt;br&gt;&lt;b&gt;XÂY DỰNG API VỚI MỐI QUAN HỆ 1-N&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="330" x="895" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 01: API lấy danh sách sinh viên&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Mục tiêu:&lt;/b&gt; Truy vấn và trả về danh sách toàn bộ sinh viên kèm thông tin lớp học tương ứng (bảng 1).&lt;br&gt;• &lt;b&gt;Kỹ thuật SQLAlchemy:&lt;/b&gt; Sử dụng câu lệnh &lt;i&gt;select(Student)&lt;/i&gt;. Để tối ưu hiệu năng và tránh lỗi N+1 Query, kết hợp dùng kỹ thuật Eager Loading như &lt;i&gt;joinedload(Student.classroom)&lt;/i&gt; để nạp trước dữ liệu lớp học trong cùng 1 câu truy vấn.&lt;br&gt;• &lt;b&gt;Response Model:&lt;/b&gt; Sử dụng Pydantic Model chứa thông tin sinh viên lồng thêm thông tin lớp học (ví dụ: &lt;i&gt;ClassroomOut&lt;/i&gt;) để chuẩn hóa cấu trúc JSON trả về." vertex="1">
+          <mxGeometry height="150" width="450" x="350" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-3" edge="1" parent="1" source="9nufNC2RD7-ZEHjRnv_k-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="9nufNC2RD7-ZEHjRnv_k-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="480" />
+              <mxPoint x="575" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 02: API lấy chi tiết sinh viên&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Mục tiêu:&lt;/b&gt; Tìm kiếm và trả về thông tin chi tiết của một sinh viên cụ thể dựa trên ID truyền vào từ Path Parameter.&lt;br&gt;• &lt;b&gt;Xử lý logic:&lt;/b&gt;&lt;br&gt;  - Thực hiện câu lệnh &lt;i&gt;select(Student).where(Student.id == student_id)&lt;/i&gt;.&lt;br&gt;  - Kiểm tra xem bản ghi có tồn tại hay không. Nếu không tìm thấy (trả về &lt;i&gt;None&lt;/i&gt;), lập tức ném ra lỗi &lt;i&gt;HTTPException(status_code=404, detail=&quot;Student not found&quot;)&lt;/i&gt;.&lt;br&gt;  - Nếu có, trả về thông tin chi tiết cùng các thuộc tính quan hệ đi kèm." vertex="1">
+          <mxGeometry height="150" width="450" x="350" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-5" edge="1" parent="1" source="9nufNC2RD7-ZEHjRnv_k-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="9nufNC2RD7-ZEHjRnv_k-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="850" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 03: API thêm mới sinh viên&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Mục tiêu:&lt;/b&gt; Tiếp nhận dữ liệu đầu vào (Request Body) để tạo mới một bản ghi sinh viên nằm trong một lớp học.&lt;br&gt;• &lt;b&gt;Kiểm tra tính toàn vẹn (Validation):&lt;/b&gt; Bắt buộc phải kiểm tra xem khóa ngoại &lt;i&gt;classroom_id&lt;/i&gt; truyền lên có thực sự tồn tại trong bảng Classroom hay không trước khi tạo sinh viên. Nếu không có, chặn lại và báo lỗi 400 hoặc 404.&lt;br&gt;• &lt;b&gt;Thao tác CSDL:&lt;/b&gt; Khởi tạo đối tượng &lt;i&gt;Student&lt;/i&gt;, thêm vào session (&lt;i&gt;db.add()&lt;/i&gt;), lưu xuống đĩa (&lt;i&gt;db.commit()&lt;/i&gt;) và trả về mã trạng thái &lt;b&gt;201 Created&lt;/b&gt;." vertex="1">
+          <mxGeometry height="150" width="450" x="1320" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-7" edge="1" parent="1" source="9nufNC2RD7-ZEHjRnv_k-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="9nufNC2RD7-ZEHjRnv_k-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="480" />
+              <mxPoint x="1545" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;" value="&lt;b&gt;Lesson 04: API cập nhật sinh viên&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Mục tiêu:&lt;/b&gt; Cập nhật thông tin của một sinh viên đã tồn tại, bao gồm cả việc thay đổi lớp học (chuyển lớp).&lt;br&gt;• &lt;b&gt;Quy trình thực hiện:&lt;/b&gt;&lt;br&gt;  - Tìm kiếm sinh viên theo ID, ném lỗi 404 nếu không tìm thấy.&lt;br&gt;  - Nếu có thay đổi &lt;i&gt;classroom_id&lt;/i&gt;, tiến hành xác thực xem lớp học mới đó có tồn tại hay không.&lt;br&gt;  - Áp dụng dữ liệu mới để cập nhật thuộc tính đối tượng bằng cách lặp qua các trường của schema hoặc dùng phương thức cập nhật trực tiếp.&lt;br&gt;  - Thực hiện &lt;i&gt;db.commit()&lt;/i&gt; và &lt;i&gt;db.refresh()&lt;/i&gt; để hoàn tất quá trình cập nhật." vertex="1">
+          <mxGeometry height="160" width="450" x="1320" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-9" edge="1" parent="1" source="9nufNC2RD7-ZEHjRnv_k-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="9nufNC2RD7-ZEHjRnv_k-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" value="&lt;b&gt;💡 NGUYÊN TẮC CỐT LÕI KHI THAO TÁC API TRÊN MỐI QUAN HỆ 1-N (STUDENT - CLASSROOM)&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Ràng buộc dữ liệu cứng:&lt;/b&gt; Khi thêm/sửa sinh viên, &lt;i&gt;classroom_id&lt;/i&gt; (Khóa ngoại) bắt buộc phải tồn tại trong bảng mẹ thì mới cho phép lưu.&lt;br&gt;• &lt;b&gt;Tối ưu hóa truy vấn:&lt;/b&gt; Sử dụng kỹ thuật Eager Loading (&lt;i&gt;joinedload&lt;/i&gt;) để gom gọn các câu lệnh SQL nhằm tránh làm quá tải CSDL khi lấy danh sách.&lt;br&gt;• &lt;b&gt;Độ khớp Schema:&lt;/b&gt; Thiết lập Pydantic Model lồng nhau chuẩn xác để hiển thị thông tin thực thể liên kết một cách khoa học nhất." vertex="1">
+          <mxGeometry height="110" width="570" x="775" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="9nufNC2RD7-ZEHjRnv_k-11" edge="1" parent="1" source="9nufNC2RD7-ZEHjRnv_k-1" style="edgeStyle=curved=1;endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=1.5;strokeDasharray=3;" target="9nufNC2RD7-ZEHjRnv_k-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
